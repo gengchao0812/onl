@@ -1,0 +1,21 @@
+-
+    - 张
+    - 三
+    - '110101197202150197'
+    - 这里是住宅地址某某大街四号院
+    - 李菲菲
+    - 天阳宏业科技发展有限公司
+    - 这里是单位地址某某某大街八十三楼
+
+#new_firstname_error:
+#    firstname1: 张$#@12
+#    familyname1: 三
+#    appiMcAddr1: 这里是住宅地址某某大街四号院
+#    appiMcContactName: 李菲菲
+#    appiMcContactPhone: 13022233331
+#    appiMcEmployerName: 天阳宏业科技发展有限公司
+#    appiMcEmplAddr1: 这里是单位地址某某某大街八十三楼
+#    appiMcEmplPhoneState: 1234
+#    appiMcEmplPhoneNo: 88885555
+#    appiMcEmplPosiYear: 15
+#    appiMcEmplYearEarn: 80

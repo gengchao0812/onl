@@ -1,0 +1,9 @@
+onl1:
+  - ops_uat
+  - Bb_11111
+  - 22.188.44.190:1521/apsonl
+
+onl2:
+  - ops_uat
+  - ops_uat
+  - 22.188.46.141:1521/apsonl
