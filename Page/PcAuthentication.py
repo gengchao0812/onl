@@ -48,25 +48,23 @@ class PcAuthentication(BasePage):
         #获取手机验证码
 
         #显示等待输入手机号页面，有则流程继续
-        WebDriverWait(self._driver,50).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="getRandom"]')))
+        WebDriverWait(self._driver,20).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="getRandom"]')))
         phone = self.get_random_phone()
         print(phone)
         self.find_and_send(By.XPATH,'//*[@id="NewappiMcMPhone"]',phone)
         self.find_and_click(By.XPATH,'//*[@id="sure_commit"]')
         #取界面验证码
-        WebDriverWait(self._driver, 50).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="verifyCode"]')))
+        WebDriverWait(self._driver, 20).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="verifyCode"]')))
         yanzhengma = self.find(By.XPATH,'//*[@id="verifyCode"]').text
         yanzhengma1 = re.findall(r'验证码是：(.*)',yanzhengma)
         self.find_and_send(By.XPATH, '//*[@id="indentifyCode"]',yanzhengma1)
-        # time.sleep(30)
-        # self.find_and_click(By.XPATH, '//*[@class="color_red bankcopy"]')
-        # self.find_and_send(By.XPATH, '//*[@id="managerPhone"]', managerphone)
-        # #输入客户经理手机号
+        #点击下一步
         self.find(By.XPATH, '//*[@id="verifitySubmit"]')
         self.find_and_click(By.XPATH, '//*[@id="verifitySubmit"]')
-        #点击下一步
+        #把界面值存入字典
         self.personal.update(firstname1 = firstname1, familyname1 = familyname1,phone = phone,idnumber = idnumber)
-        return PcPersonInformation(self._driver)
+        a = 1
+        return a
 
     """
     点击刷新

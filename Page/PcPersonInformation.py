@@ -84,10 +84,9 @@ class PcPersonInformation(BasePage):
         self.find_and_click(By.XPATH, '//*[@id="_citys1"]/a[1]')
         self.find_and_click(By.XPATH, '//*[@id="_citys2"]/a[1]')
         time.sleep(1)
-        # target = self._driver.find_element_by_xpath('//*[@class="button_group"]/input[2]')
-        # self._driver.execute_script("arguments[0].scrollIntoView();", target)
+        # 点击下一步
         self.find_and_click(By.XPATH, '//*[@class="button_group"]/input[2]')
-        #点击下一步
+        #把界面值都存入字典
         self.personalother.update(appiMcEducation = appiMcEducation, appiMcMaritalSts = appiMcMaritalSts,appiMcAddr1 = appiMcAddr1 , appiMcResideSts = appiMcResideSts , \
                                   appiMcContactName = appiMcContactName,appiMcContactRelship = appiMcContactRelship ,appiMcContactPhone = appiMcContactPhone ,  appiMcEmplIndustryType = appiMcEmplIndustryType , \
                                   appiMcEmplMessage = appiMcEmplMessage , appiMcEmplJobrole = appiMcEmplJobrole , appiMcEmplBizType = appiMcEmplBizType, appiMcEmployerName = appiMcEmployerName, \

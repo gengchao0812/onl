@@ -4,7 +4,10 @@ from Page.PcIndexPage import PcIndexPage
 from Page.MobileIndexPage import MobileIndexPage
 import py
 import sys
+import allure_pytest
+import allure
 
+@allure.feature('pc新客户')
 class TestAddMember():
     def setup(self):
         self.main = PcIndexPage()
@@ -13,7 +16,8 @@ class TestAddMember():
     # @pytest.mark.parametrize('firstname1,familyname1,appiMcAddr1, appiMcContactName, appiMcContactPhone, appiMcEmployerName, appiMcEmplAddr1, appiMcEmplPhoneState, appiMcEmplPhoneNo, appiMcEmplPosiYear, appiMcEmplYearEarn',yaml.safe_load(open("..//Data/PcNew.yaml",encoding="utf-8")).values())
     @pytest.mark.parametrize('firstname1,familyname1,idnumber,appiMcAddr1, appiMcContactName, appiMcEmployerName, appiMcEmplAddr1',yaml.safe_load(open(sys.path[0]+'\Data\PcNew.yaml',encoding='utf-8')))
     # @pytest.mark.parametrize('firstname1,familyname1,appiMcAddr1, appiMcContactName, appiMcContactPhone, appiMcEmployerName, appiMcEmplAddr1, appiMcEmplPhoneState, appiMcEmplPhoneNo, appiMcEmplPosiYear, appiMcEmplYearEarn',a)
-    # @pytest.mark.skipg
+    @pytest.mark.skipg
+    @allure.story('测试PC新客户流程正确')
     def test_add_pc_new_member(self, firstname1, familyname1,idnumber, appiMcAddr1, appiMcContactName, appiMcEmployerName, appiMcEmplAddr1):
         appid = self.main.goto_family().goto_number_card().goto_authentication().goto_personal_information(firstname1,familyname1,idnumber).goto_equity(appiMcAddr1, appiMcContactName, appiMcEmployerName, appiMcEmplAddr1).goto_persion_other().goto_preview_page().goto_end_page().goto_index()
         data = self.main.return_data_pc_new(appid[0])

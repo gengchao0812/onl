@@ -10,7 +10,5 @@ class PcPersonPreview(BasePage):
     def goto_end_page(self):
         time.sleep(6)
         self.find(By.XPATH, '//*[@id="confirmNext"]')
-        # target = self._driver.find_element_by_xpath('//*[@id="confirmNext"]')
-        # self._driver.execute_script("arguments[0].scrollIntoView();", target)
         self._driver.find_element_by_xpath('//*[@id="confirmNext"]').click()
         return PcPersonEnd(self._driver)
